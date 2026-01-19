@@ -1,17 +1,16 @@
 
 import './App.css'
-import Footer from './components/Footer'
-import Header from './components/Navbar'
-import Products from './pages/products'
+import AppRoutes from './components/AppRoutes'
+
 
 function App() {
-  
+
 
   return (
     <>
-      <Header/>
-      <Products/>
-      <Footer/>
+    
+     <AppRoutes/>
+ 
     </>
   )
 }

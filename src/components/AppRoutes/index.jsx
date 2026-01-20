@@ -9,6 +9,8 @@ import { BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes } fro
 import Header from '../Navbar'
 import Footer from '../Footer'
 import Layout from '../Layout'
+import { getAllProducts } from '../../services/products.api'
+import Error from '../Error'
 
 const routes = createBrowserRouter([
     { path: '/login', element: <Login /> },
@@ -19,7 +21,23 @@ const routes = createBrowserRouter([
         children: [
             { path: '/', element: <Home /> },
             { path: '/about', element: <About /> },
-            { path: '/products', element: <Products /> },
+            {
+                path: '/products',
+                element: <Products />
+                // loader: async (args) => {
+                //     // console.log(args);
+                //     try {
+                //         const res = await getAllProducts();
+                //         return res.data.products
+                //     } catch (err) {
+                //         throw new Response(err.message, {
+                //             status: err.status
+                //         })
+                //     }
+
+                // },
+                // errorElement:<Error/>
+            },
             { path: '/product-details/:id', element: <Details /> },
 
         ]

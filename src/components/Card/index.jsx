@@ -6,7 +6,14 @@ export default function Card({ product, handleDeleteProduct }) {
 
 
     const navigateToDetails = (id) => {
-        navigate(`/product-details/${id}`)
+        navigate(`/product-details/${id}`);
+        // navigate(0) //reload the current path
+
+        // navigate(-2) //back
+
+        // navigate(1) //forward
+
+        //history.go(1)
     }
 
     return (

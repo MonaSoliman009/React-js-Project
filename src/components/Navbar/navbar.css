@@ -3,3 +3,9 @@
     margin: 5px;
     color: black;
 }
+
+.nav_routes a:hover{
+    text-decoration: none;
+    margin: 5px;
+    color: black;
+}

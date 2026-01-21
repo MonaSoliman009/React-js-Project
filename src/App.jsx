@@ -1,16 +1,28 @@
 
+import { useState } from 'react'
 import './App.css'
-import AppRoutes from './components/AppRoutes'
+import { ThemeContext } from './contexts/theme.context'
+import AppRoutes from './routes'
 
 
 function App() {
 
+  const [theme, setTheme] = useState('light')
 
   return (
     <>
-    
-     <AppRoutes/>
- 
+
+      <ThemeContext value={{ theme, setTheme }}>
+        {/* <CounterContext value={{counter,setCounter}}> */}
+          <div data-bs-theme={theme}>
+            <AppRoutes />
+          </div>
+
+        {/* </CounterContext> */}
+
+      </ThemeContext>
+
+
     </>
   )
 }

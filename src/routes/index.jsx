@@ -1,19 +1,21 @@
 import React from 'react'
-import Home from '../../pages/Home'
-import About from '../../pages/AboutUs'
-import Products from '../../pages/products'
-import Details from '../../pages/products/details'
-import Login from '../../pages/Login'
-import NotFound from '../../pages/NotFound'
+import Home from '../pages/Home'
+import About from '../pages/AboutUs'
+import Products from '../pages/products'
+import Details from '../pages/products/details'
+import Login from '../pages/Login'
+import NotFound from '../pages/NotFound'
 import { BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes } from 'react-router'
-import Header from '../Navbar'
-import Footer from '../Footer'
-import Layout from '../Layout'
-import { getAllProducts } from '../../services/products.api'
-import Error from '../Error'
+import Header from '../components/Navbar'
+import Footer from '../components/Footer'
+import Layout from '../components/Layout'
+import { getAllProducts } from '../services/products.api'
+import Error from '../components/Error'
+import LoginV2 from '../pages/Login/login2'
+import Register from '../pages/Register'
 
 const routes = createBrowserRouter([
-    { path: '/login', element: <Login /> },
+    { path: '/login', element: <LoginV2 /> },
 
     {
         path: '',
@@ -39,6 +41,7 @@ const routes = createBrowserRouter([
                 // errorElement:<Error/>
             },
             { path: '/product-details/:id', element: <Details /> },
+    { path: '/register', element: <Register /> },
 
         ]
     },

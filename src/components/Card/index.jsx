@@ -18,7 +18,7 @@ export default function Card({ product, handleDeleteProduct }) {
 
     return (
         <>
-            <div className="col" onClick={() => { navigateToDetails(product.id) }}>
+            <div className="col" >
                 <div className="card">
                     {/* https://image.tmdb.org/t/p/w500/1.jpg */}
                     <img src={product.thumbnail} className="card-img-top" alt="..." />

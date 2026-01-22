@@ -3,7 +3,7 @@ import store from '../store'
 import { changeLoader } from '../store/slices/loader'
 
 export const axiosInstance=axios.create({
-    baseURL:'https://dummyjson.com/',
+    baseURL:import.meta.env.VITE_APP_API_BASEURL,
     headers:{
       // 'Authorization':'dfdf5645' xxxxxx
     },

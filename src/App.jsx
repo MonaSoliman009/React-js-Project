@@ -14,9 +14,12 @@ function App() {
 
       <ThemeContext value={{ theme, setTheme }}>
         {/* <CounterContext value={{counter,setCounter}}> */}
-          <div data-bs-theme={theme}>
+        <div data-bs-theme={theme}>
+          <div className='container_div' dir={localStorage.getItem('lang')=='en'?'ltr':'rtl'}>
             <AppRoutes />
           </div>
+
+        </div>
 
         {/* </CounterContext> */}
 

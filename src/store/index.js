@@ -2,11 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from './slices/counter'
 import loaderReducer from './slices/loader'
 import productsReducer from './slices/products'
+import authReducer from './slices/auth'
 const store = configureStore({
     reducer: {
         counter: counterReducer,
         loader: loaderReducer,
-        products: productsReducer
+        products: productsReducer,
+        isLoggedin:authReducer
     }
 })
 

@@ -1,7 +1,5 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Home from '../pages/Home'
-import About from '../pages/AboutUs'
-import Products from '../pages/products'
 import Details from '../pages/products/details'
 import Login from '../pages/Login'
 import NotFound from '../pages/NotFound'
@@ -13,16 +11,23 @@ import { getAllProducts } from '../services/products.api'
 import Error from '../components/Error'
 import LoginV2 from '../pages/Login/login2'
 import Register from '../pages/Register'
+import Spinner from '../components/Spinner'
+import Private from '../components/Private'
+
+
+const Products=React.lazy(()=>import('../pages/products'))
+const About=React.lazy(()=>import('../pages/AboutUs'))
+
 
 const routes = createBrowserRouter([
-    { path: '/login', element: <LoginV2 /> },
+    { path: '/login', element: <Login /> },
 
     {
         path: '',
         element: <Layout />,
         children: [
             { path: '/', element: <Home /> },
-            { path: '/about', element: <About /> },
+            { path: '/about', element:<About /> },
             {
                 path: '/products',
                 element: <Products />
@@ -41,10 +46,11 @@ const routes = createBrowserRouter([
                 // errorElement:<Error/>
             },
             { path: '/product-details/:id', element: <Details /> },
-    { path: '/register', element: <Register /> },
+    
 
         ]
     },
+    { path: '/register', element: <Register /> },
     { path: '*', element: <NotFound /> }
 ])
 export default function AppRoutes() {

@@ -21,7 +21,7 @@ export default function Header() {
   i18n.changeLanguage(lang)
   localStorage.setItem('lang',lang)
 
-  document.getElementsByClassName('container_div')[0].dir=(lang=='en')?'ltr':'rtl'
+ document.documentElement.dir =(lang=='en')?'ltr':'rtl'
  }
 
   const routes = [
